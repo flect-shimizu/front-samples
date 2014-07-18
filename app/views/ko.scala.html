@@ -1,0 +1,23 @@
+
+@main("Welcome to Play"){
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js" ></script>
+    <script src="@routes.Assets.at("javascripts/ko.js")" type="text/javascript"></script>
+
+}  {
+    <h3>Photos</h3>
+    <div class="row">
+        <form data-bind="submit: addImage">
+            Add photo: <input data-bind="value: newImageText" placeholder="Image title" />
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <!-- Example row of columns -->
+    <div class="row" data-bind="foreach: photos, visible: photos().length > 0">
+        <div class="col-md-4 text-center">
+            <h2 data-bind="text: title" ></h2>
+            <p><img src="//dummyimage.com/200x200/333/fff.png"/></p>
+            <p><a class="btn btn-default" href="#" data-bind="click: $parent.removePhoto" role="button">Delete</a></p>
+        </div>
+    </div>
+}
